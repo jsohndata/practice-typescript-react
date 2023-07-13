@@ -14,7 +14,17 @@ const Form = () => {
       /* ...form = spread operator => bring everything from form
       [e.target.name]: e.target.value = set the value of the name of the input */
       setForm({ ...form, [target.name]: target.value });
-  };
+    };
+
+    const handleFormSubmit = () => {
+      fetch('http://localhost:3000', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(form)
+      });      
+    };
 
 
 
@@ -38,6 +48,9 @@ const Form = () => {
         <label htmlFor="password">Password</label>
         <input type="password" name="password" id="password"
           onChange={ e => handleForm(e) } />
+
+        <input type="submit" value="Submit" 
+          onClick={handleFormSubmit} />
       </form>
     </section>
   );

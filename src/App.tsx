@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Form />
-      <Counter />
+      <Counter />    
     </>
   );
 }
