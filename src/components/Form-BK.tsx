@@ -1,19 +1,12 @@
 import React from 'react';
-import { Tform, defaultForm } from '../interfaces';
 
 const Form = () => {
-    // TS: <Tform | undefined | null> = type of the state
-    const [form, setForm] = React.useState<Tform>(defaultForm);
-  
-    // TS: added React.FormEvent
-    const handleForm = (e: React.FormEvent) => {    
-  
-      // TS: added HTMLInputElement 
-      const target = e.target as HTMLFormElement;
+  const [form, setForm] = React.useState();
 
-      /* ...form = spread operator => bring everything from form
-      [e.target.name]: e.target.value = set the value of the name of the input */
-      setForm({ ...form, [target.name]: target.value });
+  //@ts-ignore
+  const handleForm = (e) => {    
+    console.log(e.target.name);
+    console.log(e.target.value);    
   };
 
   return (
