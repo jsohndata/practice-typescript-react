@@ -3,7 +3,7 @@ import { Tform, defaultForm } from '../interfaces';
 
 const Form = () => {
     // TS: <Tform | undefined | null> = type of the state
-    const [form, setForm] = React.useState<Tform>(defaultForm);
+    const [form, setForm] = React.useState<Tform>(defaultForm);  
   
     // TS: added React.FormEvent
     const handleForm = (e: React.FormEvent) => {    
@@ -15,6 +15,8 @@ const Form = () => {
       [e.target.name]: e.target.value = set the value of the name of the input */
       setForm({ ...form, [target.name]: target.value });
   };
+
+
 
   return (
     <section className="container">
